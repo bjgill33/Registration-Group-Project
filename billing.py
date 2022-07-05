@@ -31,12 +31,12 @@ def calculate_hours_and_bill(id, s_in_state, c_rosters, c_hours):
     # Test if student_in_state is True.
     if s_in_state[id]:
         # Calculate for student in_state
-        cost = hours * in_state
+        cost = hours * In_state
 
     # If student_in_state is False.
     else:
         # Calculate for student out_state
-        cost = hours * out_state
+        cost = hours * Out_state
 
     return hours, cost
 
