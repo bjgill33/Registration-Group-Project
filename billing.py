@@ -15,8 +15,8 @@
 
 def calculate_hours_and_bill(id, s_in_state, c_rosters, c_hours):
     # Local variables to store in_state and out_state values
-    in_state = 225
-    out_state = 850
+    In_state = 225
+    Out_state = 850
 
     # hours accumulator
     hours = 0
