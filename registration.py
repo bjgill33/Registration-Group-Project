@@ -5,7 +5,7 @@
 # -----------------------------------------------------------------
 
 # import two function defining modules
-import student
+import student, billing
 
 
 # validate PIN to student ID
@@ -44,30 +44,38 @@ def main():
         else:
             valid = login(user_id, student_list)
         if valid:
-            choice = input('Enter 1 to add course, 2 to drop course, 3 to list courses, 4 to show bill, 0 to exit:')
+            choice = input('Enter 1 to add course, 2 to drop course, 3 to list courses, 4 to show bill, 0 to exit: ')
             while choice != '0':
                 if choice == '1':
                     student.add_course(user_id, course_roster, course_max_size)
+                    print()
                     choice = input(
-                        'Enter 1 to add course, 2 to drop course, 3 to list courses, 4 to show bill, 0 to exit:')
+                        'Enter 1 to add course, 2 to drop course, 3 to list courses, 4 to show bill, 0 to exit: ')
                 elif choice == '2':
                     student.drop_course(user_id, course_roster)
+                    print()
                     choice = input(
-                        'Enter 1 to add course, 2 to drop course, 3 to list courses, 4 to show bill, 0 to exit:')
+                        'Enter 1 to add course, 2 to drop course, 3 to list courses, 4 to show bill, 0 to exit: ')
                 elif choice == '3':
                     student.list_courses(user_id, course_roster)
+                    print()
                     choice = input(
-                        'Enter 1 to add course, 2 to drop course, 3 to list courses, 4 to show bill, 0 to exit:')
+                        'Enter 1 to add course, 2 to drop course, 3 to list courses, 4 to show bill, 0 to exit: ')
                 elif choice == '4':
-                    print('4')  # add fx
+                    hours, cost = billing.calculate_hours_and_bill(user_id, student_in_state, course_roster,
+                                                                   course_hours)
+                    billing.display_hours_and_bill(hours, cost)
+                    print()
                     choice = input(
-                        'Enter 1 to add course, 2 to drop course, 3 to list courses, 4 to show bill, 0 to exit:')
+                        'Enter 1 to add course, 2 to drop course, 3 to list courses, 4 to show bill, 0 to exit: ')
                 else:
                     print("Invalid choice")
+                    print()
                     choice = input(
-                        'Enter 1 to add course, 2 to drop course, 3 to list courses, 4 to show bill, 0 to exit:')
+                        'Enter 1 to add course, 2 to drop course, 3 to list courses, 4 to show bill, 0 to exit: ')
             print('Session ended')
             print()
 
 
 main()
+
