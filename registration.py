@@ -48,24 +48,23 @@ def main():
             while choice != '0':
                 if choice == '1':
                     student.add_course(user_id, course_roster, course_max_size)
-                    choice = input(
-                        'Enter 1 to add course, 2 to drop course, 3 to list courses, 4 to show bill, 0 to exit:')
+                    
                 elif choice == '2':
                     student.drop_course(user_id, course_roster)
-                    choice = input(
-                        'Enter 1 to add course, 2 to drop course, 3 to list courses, 4 to show bill, 0 to exit:')
+                    
                 elif choice == '3':
                     student.list_courses(user_id, course_roster)
-                    choice = input(
-                        'Enter 1 to add course, 2 to drop course, 3 to list courses, 4 to show bill, 0 to exit:')
+                    
                 elif choice == '4':
                     print('4')  # add fx
-                    choice = input(
-                        'Enter 1 to add course, 2 to drop course, 3 to list courses, 4 to show bill, 0 to exit:')
+                    
                 else:
                     print("Invalid choice")
-                    choice = input(
+                
+                print()
+                choice = input(
                         'Enter 1 to add course, 2 to drop course, 3 to list courses, 4 to show bill, 0 to exit:')
+                
             print('Session ended')
             print()
 
