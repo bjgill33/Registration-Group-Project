@@ -15,8 +15,8 @@
 
 def calculate_hours_and_bill(id, s_in_state, c_rosters, c_hours):
     # Local variables to store in_state and out_state values
-    in_state = 225
-    out_state = 850
+    IN_STATE = 225
+    OUT_STATE = 850
 
     # hours accumulator
     hours = 0
@@ -31,12 +31,12 @@ def calculate_hours_and_bill(id, s_in_state, c_rosters, c_hours):
     # Test if student_in_state is True.
     if s_in_state[id]:
         # Calculate for student in_state
-        cost = hours * in_state
+        cost = hours * IN_STATE
 
     # If student_in_state is False.
     else:
         # Calculate for student out_state
-        cost = hours * out_state
+        cost = hours * OUT_STATE
 
     return hours, cost
 
