@@ -68,4 +68,4 @@ def drop_course(id, c_roster):
         print('You are not enrolled in that course.')
     else:
         c_roster[course].remove(id)
-        print('Course removed')
+        print('Course dropped')
